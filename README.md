@@ -58,6 +58,7 @@
 
 ## What is Atlased
 ![Atlased cover image](images/atlased_cover.png#logo)
+
 **Atlased** is a **sprite sheet and atlas editor** supposedly to be used as a support tool for *2D games* development, asset preparation pipeline, game jam sessions and etc.
 It is capable of creating sprite atlases (both images and markup) and performing various editing and export operations.
 
@@ -283,7 +284,9 @@ To grow selected region(s):
 To display origin points, use **View-Origins** and **View-All origins** menu actions.
 After that the small circle will appear inside selected regions (or all of them, if you toggled *All origins*).
 Drag this round handle to adjust sprite's origin point position.
+
 ![Edit origins](images/origins.png#center_small)
+
 **NOTE:** *Origin point coordinates are relative to the top-left corner of the each particular sprite.*
 
 ##### Batch copy-paste
@@ -303,6 +306,7 @@ There are two basic rules which Atlased is applying automatically while assignin
 This way indexes will have more stability and consistency for further usage in game code or other software.
 
 **NOTE:** *If you happen to stumble upon some unexpected indexing behavior or just want to redo the whole index table within an Atlas, use **Edit-Re-create indexes** menu action and it will create a whole new set of indexes for you.*
+
 ![Recreate indexes](images/recreate_indexes.png#center_small)
 
 ### Saving and previewing your work
@@ -312,6 +316,7 @@ The dialog will appear asking you for the name of the JSON file.
 **NOTE:** *Default locations are described in "[Configuration section](#configuration)".*
 
 After saving your atlas you are able to **quickly preview both JSON and PNG files** inside your system's default applications via **"File-Show"** actions menu.
+
 ![Quick preview](images/show_files.png#center_small)
 
 [<div style="text-align:center">Table of contents</div>](#table-of-contents)
@@ -373,6 +378,7 @@ This is a box which contains the general info about your source atlas.
 * **Tile size** - most important setting in here - it is a size of a single tile within the tileset. *This is the actual tile size that will be used within the Tiled editor.*
 
 After setting all of the values, click Export and depending on where is your Tiled project and where you decided to save your files, you will see something like this inside Tiled.
+
 ![Exported image-based tileset within the Tiled Project](images/tiled_export_04.png#center_extra_small)
 
 Our exported file here is `buch_tileset.json`.
@@ -653,9 +659,13 @@ The most relevant future features are:
 If you like any of these plans, you can help me implement these features faster by [buying Atlased at itch.io](https://witnessmonolith.itch.io/atlased). My ability to work on Atlased is proportional to the amount of received support :)
 
 ## Credits
+
 Atlased, developed by Witness Monolith
+
 Art by [Pavel Nikanau aka Nuketurne](https://www.artstation.com/nuketurne)
+
 ["Platformer in the forest"](https://opengameart.org/content/a-platformer-in-the-forest) pixel-art by  [Buch](https://opengameart.org/users/buch)
+
 If you like Atlased, please tell your friends and co-workers and consider supporting it on [itch.io](https://witnessmonolith.itch.io/atlased). Stay great :)
 
 [<div style="text-align:center">Table of contents</div>](#table-of-contents)
