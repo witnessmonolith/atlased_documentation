@@ -1,0 +1,24 @@
+# Swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Auto-generated tag files
+tags
+# Persistent undo
+[._]*.un~
+
+# Visual Studio Code 
+*.code-workspace
+/.vscode
+
+# Windows shortcuts
+*.lnk
+
+# Folder config file
+[Dd]esktop.ini
+
+# Jetbrains IDEs
+.idea/
