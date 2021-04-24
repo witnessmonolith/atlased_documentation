@@ -1,5 +1,5 @@
 # Atlased user manual
-**<div style="text-align:right">v1.1.0a</div>**
+**<div style="text-align:right">v1.1.1a</div>**
 ## Table of contents
 - [Atlased user manual](#atlased-user-manual)
 	- [Table of contents](#table-of-contents)
@@ -332,7 +332,7 @@ The dialog will appear asking you of the destination directory. After receiving 
 
 **Atlased** provides the ability to create tilesets from sprite sheets and atlases to use as a collection of brushes or other asset source from within Tiled.
 
-At the moment (Tiled v1.5.0 and Atlased v1.1.0a) there are [two main ways to create a tileset in Tiled](https://doc.mapeditor.org/en/stable/manual/editing-tilesets/):
+At the moment (Tiled v1.6.0 and Atlased v1.1.1a) there are [two main ways to create a tileset in Tiled](https://doc.mapeditor.org/en/stable/manual/editing-tilesets/):
 * Use a single picture and establish a grid-like geometry within to define individual tiles.
 * Use a collection of separate images to create a *"collection tileset"*; allows working with tiles of a different size.
 
