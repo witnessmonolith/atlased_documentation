@@ -4,8 +4,10 @@
 - [Atlased user manual](#atlased-user-manual)
 	- [Table of contents](#table-of-contents)
 	- [What is Atlased](#what-is-atlased)
+		- [Atlased is](#atlased-is)
+		- [Atlases is NOT](#atlases-is-not)
 		- [Why use sprite sheets or atlases](#why-use-sprite-sheets-or-atlases)
-		- [Why Atlased](#why-atlased)
+		- [Why Atlased exists](#why-atlased-exists)
 		- [Game engines support](#game-engines-support)
 			- [Plugins and extensions](#plugins-and-extensions)
 			- [Loading Atlased files directly](#loading-atlased-files-directly)
@@ -15,16 +17,16 @@
 		- [Main features](#main-features)
 		- [Basic concepts](#basic-concepts)
 	- [Creating atlases](#creating-atlases)
-		- [Creating regions](#creating-regions)
+		- [Creating new regions](#creating-new-regions)
 			- [Manual](#manual)
 			- [Grid-based](#grid-based)
 			- [Auto-tracing](#auto-tracing)
-		- [Editing regions](#editing-regions)
+		- [Editing existing regions](#editing-existing-regions)
 			- [Basic editing](#basic-editing)
 			- [Growing regions](#growing-regions)
 			- [Working with origin points](#working-with-origin-points)
 				- [Batch copy-paste](#batch-copy-paste)
-			- [Indexes](#indexes)
+			- [Region Indexes](#region-indexes)
 		- [Saving and previewing your work](#saving-and-previewing-your-work)
 	- [Exporting](#exporting)
 		- [Separate sprites](#separate-sprites)
@@ -62,6 +64,18 @@
 **Atlased** is a **sprite sheet and atlas editor** supposedly to be used as a support tool for *2D games* development, asset preparation pipeline, game jam sessions and etc.
 It is capable of creating sprite atlases (both images and markup) and performing various editing and export operations.
 
+### Atlased is
+
+* **Atlas markup tool** -  you can create and change **regions within existing image files**.
+* **Sprite packer** - you can **create new sprite sheet images** from a set of separate sprites and get automatically created regions.
+* **Sprite slicer** - you can disassemble existing sprite sheets into separate pictures.
+
+### Atlases is NOT
+* **Graphics or pixel art editor** - for any image manipulations and editing use [Aseprite](https://www.aseprite.org/), [Krita](https://krita.org), [GIMP](https://www.gimp.org/) or whatever you like. You still can create new images using sprite packing feature.
+* **Animation software** - you can try and use Atlased for animations, but there's no direct support yet; better use programs such as [Aseprite](https://www.aseprite.org/) or [Krita](https://krita.org) which have ["onion skinning"](https://en.wikipedia.org/wiki/Onion_skinning) and other really cool features.
+* **Texture editing tool** - use dedicated software for that.
+* **Image collection arranger** - no, it is not.
+
 ### Why use sprite sheets or atlases
 Sprite atlas is a good way to organize game art to save work for GPU, game engine and for the developers (look for *sprite batching* and/or *texture batching* online; it is a technique of putting multiple data pieces into one single structure called "batch" to minimize the workload for software and hardware ).
 
@@ -79,8 +93,8 @@ You could also hash frame or region names to speed things up.
 Then you or your programmer should just query that table (or sprite manager class, or whatever code structure you came up with) in your game code for the image parts that you require and send them to your rendering code.
 
 **See [Game engines support](#game-engines-support) and [Loading Atlased files](#loading-atlased-files-directly) for more info.**
-### Why Atlased
-My goal was to create a user-friendly tool which could be used on multiple platforms and also be compatible with as much languages and engines as possible. In addition I needed an editor which is versatile, not overly bloated with features and also accessible, that's why Atlased exists.
+### Why Atlased exists
+My goal was to create a user-friendly atlas markup and sprite packing tool which could be used on multiple platforms and also be compatible with as much programming languages and engines as possible. In addition I needed an editor which is versatile, not overly bloated with excess features and also accessible, that's why Atlased exists.
 *<div style="text-align:right">Atlased is written in C++ using the [Qt framework](https://www.qt.io/).</div>*
 
 [<div style="text-align:center">Table of contents</div>](#table-of-contents)
@@ -193,9 +207,10 @@ From the top:
 * **From grid** - button to create a new region inside of each grid cell, if grid is enabled.
 * **Remove all** - removes all regions within current tab.
 
-### Creating regions
+### Creating new regions
 The main purpose of Atlased editor is to be able to define regions with some additional info within the loaded images.
 These regions could be created in different ways.
+This section deals with creation of a new region sets. For [editing or changing](#editing-existing-regions) of existing regions, please refer to the [corresponding section](#editing-existing-regions).
 
 #### Manual
 To manually create a region, first load an image and then **Ctrl-drag** with your **left mouse button**(LMB).
@@ -242,7 +257,9 @@ This feature is particularly useful when dealing with large sprite sheets that n
 
 [<div style="text-align:center">Table of contents</div>](#table-of-contents)
 
-### Editing regions
+### Editing existing regions
+This section deals with changing and adjusting existing regions.
+For adding new regions, refer to the ["Creating new regions"](#creating-new-regions) section.
 #### Basic editing
 Regions could be edited in two basic ways: by adjusting their size and position by hand or by entering these parameters inside the corresponding region panel.
 ![Region panel](images/edit_region_02.png#center_extra_small)
@@ -296,8 +313,8 @@ You can copy origin point position from one region to another or to a group of s
 3. Select your target region(s).
 4. Press **Ctrl-Shift-V** or use **Edit-Paste origin** to paste origin point position to your whole selection.
 
-#### Indexes
-Each region is assigned with it's own unique index within a single Atlas. This is done to have an id system which is parallel to the string names that are set by a user. Indexes will be written to the JSON file(s) along all other region-related data.
+#### Region Indexes
+Each **region** is **automatically assigned** with it's own **unique index** within a **single Atlas**. This is done to have an id system which is parallel to the string names that are set by a user. Indexes will be written to the JSON file(s) along all other region-related data.
 Each time you add a region, Atlased will give it a new unique (un-occupied) index.
 
 There are two basic rules which Atlased is applying automatically while assigning indexes.
@@ -346,7 +363,7 @@ For the demo purposes we will be using a [sprite sheet](https://opengameart.org/
 First, create your atlas either by sprite packing, auto-tracing, manually or by using a region grid.
 Second (optional), go to the [Configuration dialog](#configuration) and set paths to export to your Tiled project location.
 
-After [creating some regions](#creating-regions) our atlas looks like this.
+After [creating some regions](#creating-new-regions) our atlas looks like this.
 ![Atlas ready for Tiled export](images/tiled_export_01.png#center)
 
 Next, go to the **"File-Export to-"** menu and select the type of export that suits your needs.
